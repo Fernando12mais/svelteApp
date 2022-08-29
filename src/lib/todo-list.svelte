@@ -1,6 +1,6 @@
 <script lang="ts">
   let tasks: { name: string; isDone: boolean }[] = [
-    ...JSON.parse(localStorage.getItem("tasks")),
+    ...(JSON.parse(localStorage.getItem("tasks")) || []),
   ];
   let inputValue = "";
   $: tasks && localStorage.setItem("tasks", JSON.stringify(tasks));
